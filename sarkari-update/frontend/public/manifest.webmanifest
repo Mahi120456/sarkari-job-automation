@@ -1,0 +1,9 @@
+{
+  "name": "SarkariUpdate.in",
+  "short_name": "SarkariUpdate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#E65100",
+  "icons": []
+}
