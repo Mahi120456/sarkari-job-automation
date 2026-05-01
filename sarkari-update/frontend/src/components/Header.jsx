@@ -1,35 +1,23 @@
 import { Link } from 'react-router-dom';
 
-const categories = ['Sarkari Naukri', 'Exam', 'Admit Card', 'Result', 'Yojana', 'Update'];
-
-function Header({ onCategoryChange }) {
+function Header() {
   return (
-    <header className="bg-navy text-white">
-      <div className="bg-red-700 text-sm px-4 py-2 whitespace-nowrap overflow-hidden">
-        <p className="animate-pulse">Breaking: SSC, UPSC, RRB और IBPS की ताज़ा सरकारी भर्तियों की अपडेट देखें!</p>
+    <header className="bg-gradient-to-r from-orange-600 via-red-600 to-red-700 text-white shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 py-2 text-xs sm:text-sm flex flex-wrap items-center justify-between gap-2">
+        <p className="font-medium">भारत की ताज़ा सरकारी नौकरी, रिजल्ट और एडमिट कार्ड अपडेट</p>
+        <p className="opacity-90">Trusted Sarkari News Portal</p>
       </div>
-      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <Link to="/" className="text-2xl font-bold text-orange-300">SarkariUpdate.in</Link>
-        <input
-          type="search"
-          placeholder="Search notification..."
-          className="w-full md:w-96 px-4 py-2 rounded text-slate-900"
-        />
-      </div>
-      <nav className="bg-saffron">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => onCategoryChange(cat)}
-              className="px-4 py-1 bg-white/10 rounded hover:bg-white/20"
-            >
-              {cat}
-            </button>
-          ))}
-          <button onClick={() => onCategoryChange('')} className="px-4 py-1 bg-white text-slate-900 rounded">All</button>
+      <div className="bg-white text-slate-900 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+          <Link to="/" className="text-xl sm:text-2xl font-extrabold tracking-tight text-red-700">
+            Sarkari Update
+          </Link>
+          <nav className="flex items-center gap-2 sm:gap-4 text-sm sm:text-base">
+            <Link to="/" className="px-3 py-1.5 rounded-md hover:bg-slate-100">Home</Link>
+            <Link to="/admin" className="px-3 py-1.5 rounded-md hover:bg-slate-100">Admin</Link>
+          </nav>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
